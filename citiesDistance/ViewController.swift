@@ -15,15 +15,38 @@ class ViewController: UIViewController {
     @IBOutlet weak var textFieldDistance: UITextField!
     @IBOutlet weak var buttonSave: UIButton!
     
+    struct distance{
+        var from = ""
+        var to = ""
+        var distance = 0.00
+    }
     
+    var distances:[distance] = [distance]()
+    var newDistance:distance = distance()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
-
+    
     @IBAction func buttonSave(_ sender: UIButton) {
+        newDistance.from = textFieldFrom.text!
+        newDistance.to = textFieldTo.text!
+        newDistance.distance = Double(textFieldDistance.text!)!
+        
+        distances.append(newDistance)
+        cleanNewDistance()
+        print(distances)
     }
     
+    func cleanNewDistance(){
+        newDistance.from = ""
+        newDistance.to = ""
+        newDistance.distance = 0.00
+        textFieldFrom.text = ""
+        textFieldTo.text = ""
+        textFieldDistance.text = ""
+        
+    }
 }
 
