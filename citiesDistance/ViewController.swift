@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController,UITextFieldDelegate {
 
     @IBOutlet weak var textFieldFrom: UITextField!
     @IBOutlet weak var textFieldTo: UITextField!
@@ -27,6 +27,13 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        textFieldDistance.delegate = self
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textFieldDistance.resignFirstResponder()
+        buttonSave(buttonSave)
+        return true
     }
     
     @IBAction func buttonSave(_ sender: UIButton) {
@@ -48,5 +55,6 @@ class ViewController: UIViewController {
         textFieldDistance.text = ""
         
     }
+    
 }
 
