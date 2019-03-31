@@ -10,11 +10,20 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var textFieldFrom: UITextField!
+    @IBOutlet weak var textFieldTo: UITextField!
+    @IBOutlet weak var textFieldDistance: UITextField!
+    @IBOutlet weak var buttonSave: UIButton!
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
 
-
+    @IBAction func buttonSave(_ sender: UIButton) {
+    }
+    
 }
 
